@@ -1,11 +1,13 @@
 import { getGreeting } from "./common.mjs";
-import daysData from "./days.json" with { type: "json" };
+import daysData from "./days.json" with { type: "json" };;
 import { getMonths } from "./common.mjs";
 
 //Dom references
 let monthsDropdown;
 let yearsDropdown;
 let calendarBody;
+let prevMonthBtn;
+let nextMonthBtn;
 
 //State variables
 const today = new Date();
@@ -82,11 +84,45 @@ function generateCalendar(year, month) {
     calendarBody.appendChild(row);
   }
 }
+function refreshCalendar() {
+  generateCalendar(currentYear, currentMonth);
+  updateCalendar();
+  monthsDropdown.value = currentMonth;
+  yearsDropdown.value = currentYear;
+}
+
+function handlePreviousBtn() {
+  if (currentMonth === 0) {
+    currentMonth = 11;
+    currentYear--;
+  } else {
+    currentMonth--;
+  }
+
+  refreshCalendar();
+}
+
+function handleNextBtn() {
+  if (currentMonth === 11) {
+    currentMonth = 0;
+    currentYear++;
+  } else {
+    currentMonth++;
+  }
+
+  refreshCalendar();
+}
+
 // Initialize application
 function setup() {
   monthsDropdown = document.getElementById("months-dropdown");
   yearsDropdown = document.getElementById("years-dropdown");
   calendarBody = document.getElementById("calendar-body");
+  prevMonthBtn = document.getElementById("previous-month");
+  nextMonthBtn = document.getElementById("next-month");
+
+  prevMonthBtn.addEventListener("click", handlePreviousBtn);
+  nextMonthBtn.addEventListener("click", handleNextBtn);
 
   populateMonthsDropdown();
   populateYearsDropdown();
