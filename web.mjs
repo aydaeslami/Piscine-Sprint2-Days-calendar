@@ -1,5 +1,5 @@
 import { getGreeting } from "./common.mjs";
-import daysData from "./days.json" with { type: "json" };;
+import daysData from "./days.json" with { type: "json" };
 import { getMonths } from "./common.mjs";
 
 //Dom references
@@ -113,6 +113,15 @@ function handleNextBtn() {
   refreshCalendar();
 }
 
+function handleMonthChange(event) {
+  currentMonth = Number(event.target.value);
+  refreshCalendar();
+}
+function handleYearChange(event) {
+  currentYear = Number(event.target.value);
+  refreshCalendar();
+}
+
 // Initialize application
 function setup() {
   monthsDropdown = document.getElementById("months-dropdown");
@@ -123,6 +132,8 @@ function setup() {
 
   prevMonthBtn.addEventListener("click", handlePreviousBtn);
   nextMonthBtn.addEventListener("click", handleNextBtn);
+  monthsDropdown.addEventListener("change", handleMonthChange);
+  yearsDropdown.addEventListener("change", handleYearChange);
 
   populateMonthsDropdown();
   populateYearsDropdown();
