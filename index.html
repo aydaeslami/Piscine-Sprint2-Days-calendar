@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script type="module" src="common.mjs"></script>
-        <script type="module" src="web.mjs"></script>
-    </head>
-<body>
- <h1><b>Loading...</b></h1>
+  <head>
+    <script type="module" src="common.mjs"></script>
+    <script type="module" src="web.mjs"></script>
+  </head>
+  <body>
+    <h1><b>Loading...</b></h1>
 
-  <br>
+    <br />
 
-  <button>Previous Month</button>
-  <button>Next Month</button>
+    <button>Previous Month</button>
+    <button>Next Month</button>
 
-  <br><br>
+    <br /><br />
 
-  <label for="month">Month:</label>
-  <select id="months-dropdown"></select>
+    <label for="month">Month:</label>
+    <select id="months-dropdown"></select>
 
-  &nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;
 
-  <label for="year">Year:</label>
-  <select id="years-dropdown"></select>
+    <label for="year">Year:</label>
+    <select id="years-dropdown"></select>
 
-  &nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;
 
-  <button>Go</button>
+    <button>Go</button>
 
-  <br><br><br>
+    <br /><br /><br />
 
-  <table border="1" width="100%">
-<tr style="background-color: lightgray;">      <th>Mon</th>
-      <th>Tue</th>
-      <th>Wed</th>
-      <th>Thu</th>
-      <th>Fri</th>
-      <th>Sat</th>
-      <th>Sun</th>
-    </tr>
-  </table>
-
- 
-</body>
+    <table border="1" width="100%" >
+      <thead>
+        <tr style="background-color: lightgray">
+          <th>Mon</th>
+          <th>Tue</th>
+          <th>Wed</th>
+          <th>Thu</th>
+          <th>Fri</th>
+          <th>Sat</th>
+          <th>Sun</th>
+        </tr>
+      </thead>
+      <tbody id="calendar-body"></tbody>
+    </table>
+  </body>
 </html>
