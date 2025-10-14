@@ -47,12 +47,6 @@ function populateYearsDropdown() {
   yearsDropdown.value = currentYear;
 }
 
-// Update the calendar display
-function updateCalendar() {
-  const months = getMonths();
-  const header = document.querySelector("h1 b");
-  header.textContent = `${months[currentMonth]} ${currentYear}`;
-}
 
 // Generate calendar grid
 async function generateCalendar(year, month) {
@@ -61,13 +55,18 @@ async function generateCalendar(year, month) {
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   const firstDay = new Date(year, month, 1).getDay();
   const startDay = (firstDay + 6) % 7;
+  
+  // Calculate exact weeks needed
+  const totalCells = startDay + daysInMonth;
+  const weeksNeeded = Math.ceil(totalCells / 7);
+  
   //////////////////Aida 
   const events = await getEventsForMonth(year, month);
   //////////////////Aida
 
   let date = 1;
 
-  for (let week = 0; week < 6; week++) {
+  for (let week = 0; week < weeksNeeded; week++) { 
     const row = document.createElement("tr");
 
     for (let day = 0; day < 7; day++) {
@@ -81,7 +80,7 @@ async function generateCalendar(year, month) {
         cell.textContent = date;
         const event = events.find((e) => e.day === date);
         if (event) {
-          cell.innerHTML = `${date}<br><small> ${event.name}</small>`;
+          cell.innerHTML = `${date}<br><small>${event.name}</small>`;
         }
         date++;
       }
@@ -90,14 +89,24 @@ async function generateCalendar(year, month) {
     calendarBody.appendChild(row);
   }
 }
-function refreshCalendar() {
-  generateCalendar(currentYear, currentMonth);
-  updateCalendar();
+
+async function refreshCalendar() {
+  // Update header
+  const months = getMonths();
+  const header = document.querySelector("h1 b");
+  header.textContent = `${months[currentMonth]} ${currentYear}`;
+  
+  // Update dropdowns
   monthsDropdown.value = currentMonth;
   yearsDropdown.value = currentYear;
+  
+  // Generate calendar grid
+  await generateCalendar(currentYear, currentMonth);
 }
 
-function handlePreviousBtn() {
+
+
+async function handlePreviousBtn() {
   if (currentMonth === 0) {
     currentMonth = 11;
     currentYear--;
@@ -105,10 +114,10 @@ function handlePreviousBtn() {
     currentMonth--;
   }
 
-  refreshCalendar();
+  await refreshCalendar();
 }
 
-function handleNextBtn() {
+async function handleNextBtn() {
   if (currentMonth === 11) {
     currentMonth = 0;
     currentYear++;
@@ -116,20 +125,20 @@ function handleNextBtn() {
     currentMonth++;
   }
 
-  refreshCalendar();
+  await refreshCalendar();
 }
 
-function handleMonthChange(event) {
+async function handleMonthChange(event) {
   currentMonth = Number(event.target.value);
-  refreshCalendar();
+  await refreshCalendar();
 }
-function handleYearChange(event) {
+async function handleYearChange(event) {
   currentYear = Number(event.target.value);
-  refreshCalendar();
+  await refreshCalendar();
 }
 
 // Initialize application
-function setup() {
+async function setup() {
   monthsDropdown = document.getElementById("months-dropdown");
   yearsDropdown = document.getElementById("years-dropdown");
   calendarBody = document.getElementById("calendar-body");
@@ -143,8 +152,8 @@ function setup() {
 
   populateMonthsDropdown();
   populateYearsDropdown();
-  updateCalendar();
-  generateCalendar(currentYear, currentMonth);
+  await refreshCalendar();
+
 }
 
 window.onload = setup;
