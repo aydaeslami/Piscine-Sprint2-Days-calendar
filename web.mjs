@@ -1,6 +1,5 @@
-import { getGreeting } from "./common.mjs";
+import { getGreeting, getEventsForMonth, getMonths } from "./common.mjs";
 import daysData from "./days.json" with { type: "json" };
-import { getMonths } from "./common.mjs";
 
 //Dom references
 let monthsDropdown;
@@ -56,12 +55,15 @@ function updateCalendar() {
 }
 
 // Generate calendar grid
-function generateCalendar(year, month) {
+async function generateCalendar(year, month) {
   calendarBody.innerHTML = "";
 
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   const firstDay = new Date(year, month, 1).getDay();
   const startDay = (firstDay + 6) % 7;
+  //////////////////Aida 
+  const events = await getEventsForMonth(year, month);
+  //////////////////Aida
 
   let date = 1;
 
@@ -77,6 +79,10 @@ function generateCalendar(year, month) {
         cell.textContent = "";
       } else {
         cell.textContent = date;
+        const event = events.find((e) => e.day === date);
+        if (event) {
+          cell.innerHTML = `${date}<br><small> ${event.name}</small>`;
+        }
         date++;
       }
       row.appendChild(cell);

@@ -1,19 +1,48 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style>
+ 
+      table {
+        border-collapse: collapse;
+        width: 80%;
+      }
+
+      th,
+      td {
+        width: 12%; 
+        height: 100px; 
+        text-align: center;
+        vertical-align: top;
+        font-size: 18px;
+        padding: 8px;
+      }
+
+      th {
+        background-color: lightgray;
+        font-weight: bold;
+      }
+
+
+    </style>
+
     <script type="module" src="common.mjs"></script>
+
     <script type="module" src="web.mjs"></script>
   </head>
+
   <body>
     <h1><b>Loading...</b></h1>
 
     <br />
 
+    <!-- Navigation buttons -->
     <button id="previous-month">Previous Month</button>
     <button id="next-month">Next Month</button>
 
     <br /><br />
 
+    <!-- Month and year dropdowns -->
     <label for="month">Month:</label>
     <select id="months-dropdown"></select>
 
@@ -24,11 +53,12 @@
 
     &nbsp;&nbsp;&nbsp;
 
-    <button>Go</button>
+    <button id="go-button">Go</button>
 
     <br /><br /><br />
 
-    <table border="1" width="100%" >
+    <!-- Calendar table -->
+    <table border="1" width="70%">
       <thead>
         <tr style="background-color: lightgray">
           <th>Mon</th>
