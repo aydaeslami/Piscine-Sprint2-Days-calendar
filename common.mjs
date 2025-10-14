@@ -1,5 +1,4 @@
 // This file contains functions that can be used in both browser and Node environments.
-// You can delete or modify these once you understand how it works.
 
 export function getGreeting() {
   return "Hello";
@@ -67,9 +66,22 @@ export function getTargetDay(
   return null;
 }
 
+// Load days.json data - works in both Node and browser
+async function loadDaysData() {
+  // Check if we're in Node.js environment
+  if (typeof process !== 'undefined' && process.versions?.node) {
+    const { readFileSync } = await import('fs');
+    const data = readFileSync('days.json', 'utf8');
+    return JSON.parse(data);
+  } else {
+    // Browser environment
+    const response = await fetch("days.json");
+    return await response.json();
+  }
+}
+
 export async function getEventsForMonth(year, monthIndex) {
-  const response = await fetch("days.json");
-  const data = await response.json();
+  const data = await loadDaysData();
 
   const events = [];
 
@@ -93,6 +105,7 @@ export async function getEventsForMonth(year, monthIndex) {
       events.push({
         day: dayNumber,
         name: element.name,
+        description: element.description || "",
         descriptionURL: element.descriptionURL,
       });
     }
