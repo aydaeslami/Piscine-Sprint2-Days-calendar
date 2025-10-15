@@ -1,5 +1,4 @@
 import { getGreeting, getEventsForMonth, getMonths } from "./common.mjs";
-import daysData from "./days.json" with { type: "json" };
 
 //Dom references
 let monthsDropdown;
@@ -36,8 +35,8 @@ function populateMonthsDropdown() {
 
 // Populate years dropdown
 function populateYearsDropdown() {
-  const startYear = currentYear - 30;
-  const endYear = currentYear + 30;
+  const startYear = currentYear - 125;
+  const endYear = currentYear + 25;
 
   yearsDropdown.innerHTML = ""; // Clear existing options
 
@@ -57,46 +56,49 @@ async function showEventModal(event) {
   modalTitle.textContent = event.name;
   modalDescription.textContent = "Loading...";
   modal.style.display = "flex";
-  
+
   // Fetch content from descriptionURL
   if (event.descriptionURL) {
     try {
       const response = await fetch(event.descriptionURL);
       const html = await response.text();
-      
+
       // Parse HTML to extract title and text content
       const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-      
+      const doc = parser.parseFromString(html, "text/html");
+
       // Get page title
-      const pageTitle = doc.querySelector('title')?.textContent || event.name;
-      
+      const pageTitle = doc.querySelector("title")?.textContent || event.name;
+
       // Get main text content (try common content selectors)
-      let content = '';
+      let content = "";
       const contentSelectors = [
-        'article',
-        'main',
-        '.content',
-        '#content',
-        'body'
+        "article",
+        "main",
+        ".content",
+        "#content",
+        "body",
       ];
-      
+
       for (const selector of contentSelectors) {
         const element = doc.querySelector(selector);
         if (element) {
           // Remove script and style tags
-          element.querySelectorAll('script, style, nav, header, footer').forEach(el => el.remove());
+          element
+            .querySelectorAll("script, style, nav, header, footer")
+            .forEach((el) => el.remove());
           content = element.textContent.trim();
           if (content.length > 100) break;
         }
       }
-      
+
       // Display the fetched content
       modalDescription.innerHTML = `
-        <p>${content.slice(0, 500)}${content.length > 500 ? '...' : ''}</p>
-        <a href="${event.descriptionURL}" target="_blank" style="color: #4CAF50; text-decoration:</a>
+        <p>${content.slice(0, 500)}${content.length > 500 ? "..." : ""}</p>
+        <a href="${
+          event.descriptionURL
+        }" target="_blank" style="color: #4CAF50; text-decoration:</a>
       `;
-      
     } catch (error) {
       modalDescription.innerHTML = `
         <p>Unable to load content.</p>
@@ -108,7 +110,7 @@ async function showEventModal(event) {
   } else {
     modalDescription.textContent = "No description available.";
   }
-  
+
   modalLink.style.display = "none";
 }
 
@@ -124,16 +126,17 @@ async function generateCalendar(year, month) {
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   const firstDay = new Date(year, month, 1).getDay();
   const startDay = (firstDay + 6) % 7;
-  
+
   // Calculate exact weeks needed
   const totalCells = startDay + daysInMonth;
   const weeksNeeded = Math.ceil(totalCells / 7);
-  
+
   const events = await getEventsForMonth(year, month);
+  // console.log("Events for month:", events.descriptionURL);
 
   let date = 1;
 
-  for (let week = 0; week < weeksNeeded; week++) { 
+  for (let week = 0; week < weeksNeeded; week++) {
     const row = document.createElement("tr");
 
     for (let day = 0; day < 7; day++) {
@@ -146,18 +149,18 @@ async function generateCalendar(year, month) {
       } else {
         const currentDate = date;
         const event = events.find((e) => e.day === currentDate);
-        
+
         if (event) {
           cell.innerHTML = `${currentDate}<br><small class="event-name">${event.name}</small>`;
           cell.style.cursor = "pointer";
           cell.classList.add("has-event");
-          
+
           // Add click handler to show modal
           cell.addEventListener("click", () => showEventModal(event));
         } else {
           cell.textContent = currentDate;
         }
-        
+
         date++;
       }
       row.appendChild(cell);
@@ -171,29 +174,29 @@ async function refreshCalendar() {
   const months = getMonths();
   const header = document.querySelector("h1 b");
   header.textContent = `${months[currentMonth]} ${currentYear}`;
-  
+
   // Update dropdowns
   monthsDropdown.value = currentMonth;
   yearsDropdown.value = currentYear;
-  
+
   // Generate calendar grid
   await generateCalendar(currentYear, currentMonth);
 }
 
-    async function handlePreviousBtn() {
-      closeModal();  
-      if (currentMonth === 0) {
-        currentMonth = 11;
-        currentYear--;
-      } else {
-        currentMonth--;
-      }
+async function handlePreviousBtn() {
+  closeModal();
+  if (currentMonth === 0) {
+    currentMonth = 11;
+    currentYear--;
+  } else {
+    currentMonth--;
+  }
 
-      await refreshCalendar();
-    }
+  await refreshCalendar();
+}
 
 async function handleNextBtn() {
-  closeModal();  
+  closeModal();
   if (currentMonth === 11) {
     currentMonth = 0;
     currentYear++;
@@ -232,7 +235,7 @@ async function setup() {
   monthsDropdown.addEventListener("change", handleMonthChange);
   yearsDropdown.addEventListener("change", handleYearChange);
   modalClose.addEventListener("click", closeModal);
-  
+
   // Close modal when clicking outside
   modal.addEventListener("click", (e) => {
     if (e.target === modal) {

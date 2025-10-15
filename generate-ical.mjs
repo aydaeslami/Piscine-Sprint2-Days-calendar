@@ -1,5 +1,5 @@
-import { getEventsForMonth, getMonths } from "./common.mjs";
-import { readFileSync, writeFileSync } from "fs";
+import { getEventsForMonth } from "./common.mjs";
+import { writeFileSync } from "fs";
 
 // Generate iCal format date (YYYYMMDD)
 function formatICalDate(year, month, day) {
@@ -16,10 +16,11 @@ function generateUID(year, month, day, name) {
 
 // Escape special characters for iCal format
 function escapeICalText(text) {
-  return text.replace(/\\/g, "\\\\")
-             .replace(/;/g, "\\;")
-             .replace(/,/g, "\\,")
-             .replace(/\n/g, "\\n");
+  return text
+    .replace(/\\/g, "\\\\")
+    .replace(/;/g, "\\;")
+    .replace(/,/g, "\\,")
+    .replace(/\n/g, "\\n");
 }
 
 // Format current timestamp for iCal
@@ -32,7 +33,7 @@ async function generateICalFile() {
   const startYear = 2020;
   const endYear = 2030;
   const timestamp = getICalTimestamp();
-  
+
   let icalContent = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
@@ -41,19 +42,19 @@ async function generateICalFile() {
     "METHOD:PUBLISH",
     "X-WR-CALNAME:Commemorative Days",
     "X-WR-TIMEZONE:UTC",
-    "X-WR-CALDESC:Commemorative days calendar (2020-2030)"
+    "X-WR-CALDESC:Commemorative days calendar (2020-2030)",
   ].join("\r\n");
 
   // Generate events for each year
   for (let year = startYear; year <= endYear; year++) {
     for (let month = 0; month < 12; month++) {
       const events = await getEventsForMonth(year, month);
-      
+
       for (const event of events) {
         const dateStr = formatICalDate(year, month, event.day);
         const uid = generateUID(year, month, event.day, event.name);
         const summary = escapeICalText(event.name);
-        
+
         icalContent += "\r\n";
         icalContent += "BEGIN:VEVENT\r\n";
         icalContent += `UID:${uid}\r\n`;
@@ -61,7 +62,7 @@ async function generateICalFile() {
         icalContent += `DTSTART;VALUE=DATE:${dateStr}\r\n`;
         icalContent += `DTEND;VALUE=DATE:${dateStr}\r\n`;
         icalContent += `SUMMARY:${summary}\r\n`;
-        
+
         // Add description if available
         let description = "";
         if (event.description) {
@@ -75,11 +76,11 @@ async function generateICalFile() {
           }
           icalContent += `URL:${event.descriptionURL}\r\n`;
         }
-        
+
         if (description) {
           icalContent += `DESCRIPTION:${description}\r\n`;
         }
-        
+
         icalContent += "TRANSP:TRANSPARENT\r\n";
         icalContent += "END:VEVENT\r\n";
       }
@@ -87,7 +88,7 @@ async function generateICalFile() {
   }
 
   icalContent += "END:VCALENDAR\r\n";
-  
+
   // Write to file
   writeFileSync("days.ics", icalContent, "utf8");
   console.log("✓ Generated days.ics successfully");
