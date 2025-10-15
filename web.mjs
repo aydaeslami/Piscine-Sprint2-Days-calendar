@@ -7,6 +7,11 @@ let yearsDropdown;
 let calendarBody;
 let prevMonthBtn;
 let nextMonthBtn;
+let modal;
+let modalClose;
+let modalTitle;
+let modalDescription;
+let modalLink;
 
 //State variables
 const today = new Date();
@@ -47,6 +52,70 @@ function populateYearsDropdown() {
   yearsDropdown.value = currentYear;
 }
 
+// Show modal with event details
+async function showEventModal(event) {
+  modalTitle.textContent = event.name;
+  modalDescription.textContent = "Loading...";
+  modal.style.display = "flex";
+  
+  // Fetch content from descriptionURL
+  if (event.descriptionURL) {
+    try {
+      const response = await fetch(event.descriptionURL);
+      const html = await response.text();
+      
+      // Parse HTML to extract title and text content
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      
+      // Get page title
+      const pageTitle = doc.querySelector('title')?.textContent || event.name;
+      
+      // Get main text content (try common content selectors)
+      let content = '';
+      const contentSelectors = [
+        'article',
+        'main',
+        '.content',
+        '#content',
+        'body'
+      ];
+      
+      for (const selector of contentSelectors) {
+        const element = doc.querySelector(selector);
+        if (element) {
+          // Remove script and style tags
+          element.querySelectorAll('script, style, nav, header, footer').forEach(el => el.remove());
+          content = element.textContent.trim();
+          if (content.length > 100) break;
+        }
+      }
+      
+      // Display the fetched content
+      modalDescription.innerHTML = `
+        <p>${content.slice(0, 500)}${content.length > 500 ? '...' : ''}</p>
+        <a href="${event.descriptionURL}" target="_blank" style="color: #4CAF50; text-decoration:</a>
+      `;
+      
+    } catch (error) {
+      modalDescription.innerHTML = `
+        <p>Unable to load content.</p>
+        <a href="${event.descriptionURL}" target="_blank" style="color: #4CAF50; text-decoration: underline;">View on website</a>
+      `;
+    }
+  } else if (event.description) {
+    modalDescription.textContent = event.description;
+  } else {
+    modalDescription.textContent = "No description available.";
+  }
+  
+  modalLink.style.display = "none";
+}
+
+// Close modal
+function closeModal() {
+  modal.style.display = "none";
+}
 
 // Generate calendar grid
 async function generateCalendar(year, month) {
@@ -60,9 +129,7 @@ async function generateCalendar(year, month) {
   const totalCells = startDay + daysInMonth;
   const weeksNeeded = Math.ceil(totalCells / 7);
   
-  //////////////////Aida 
   const events = await getEventsForMonth(year, month);
-  //////////////////Aida
 
   let date = 1;
 
@@ -77,11 +144,20 @@ async function generateCalendar(year, month) {
       } else if (date > daysInMonth) {
         cell.textContent = "";
       } else {
-        cell.textContent = date;
-        const event = events.find((e) => e.day === date);
+        const currentDate = date;
+        const event = events.find((e) => e.day === currentDate);
+        
         if (event) {
-          cell.innerHTML = `${date}<br><small>${event.name}</small>`;
+          cell.innerHTML = `${currentDate}<br><small class="event-name">${event.name}</small>`;
+          cell.style.cursor = "pointer";
+          cell.classList.add("has-event");
+          
+          // Add click handler to show modal
+          cell.addEventListener("click", () => showEventModal(event));
+        } else {
+          cell.textContent = currentDate;
         }
+        
         date++;
       }
       row.appendChild(cell);
@@ -103,8 +179,6 @@ async function refreshCalendar() {
   // Generate calendar grid
   await generateCalendar(currentYear, currentMonth);
 }
-
-
 
 async function handlePreviousBtn() {
   if (currentMonth === 0) {
@@ -132,6 +206,7 @@ async function handleMonthChange(event) {
   currentMonth = Number(event.target.value);
   await refreshCalendar();
 }
+
 async function handleYearChange(event) {
   currentYear = Number(event.target.value);
   await refreshCalendar();
@@ -144,16 +219,28 @@ async function setup() {
   calendarBody = document.getElementById("calendar-body");
   prevMonthBtn = document.getElementById("previous-month");
   nextMonthBtn = document.getElementById("next-month");
+  modal = document.getElementById("event-modal");
+  modalClose = document.getElementById("modal-close");
+  modalTitle = document.getElementById("modal-title");
+  modalDescription = document.getElementById("modal-description");
+  modalLink = document.getElementById("modal-link");
 
   prevMonthBtn.addEventListener("click", handlePreviousBtn);
   nextMonthBtn.addEventListener("click", handleNextBtn);
   monthsDropdown.addEventListener("change", handleMonthChange);
   yearsDropdown.addEventListener("change", handleYearChange);
+  modalClose.addEventListener("click", closeModal);
+  
+  // Close modal when clicking outside
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
 
   populateMonthsDropdown();
   populateYearsDropdown();
   await refreshCalendar();
-
 }
 
 window.onload = setup;

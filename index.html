@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <style>
  
@@ -25,7 +25,7 @@
 
 
     </style>
-
+    <title>Days Calendar Project</title>
     <script type="module" src="common.mjs"></script>
 
     <script type="module" src="web.mjs"></script>
@@ -43,12 +43,12 @@
     <br /><br />
 
     <!-- Month and year dropdowns -->
-    <label for="month">Month:</label>
+    <label for="months-dropdown">Month:</label>
     <select id="months-dropdown"></select>
 
     &nbsp;&nbsp;&nbsp;
 
-    <label for="year">Year:</label>
+    <label for="years-dropdown">Year:</label>
     <select id="years-dropdown"></select>
 
     &nbsp;&nbsp;&nbsp;
@@ -72,5 +72,13 @@
       </thead>
       <tbody id="calendar-body"></tbody>
     </table>
+        <!-- Modal -->
+        <div id="event-modal">
+          <div class="modal-content">
+              <button class="modal-close" id="modal-close">&times;</button>
+              <h2 id="modal-title"></h2>
+              <p id="modal-description"></p>
+          </div>
+      </div>
   </body>
 </html>
