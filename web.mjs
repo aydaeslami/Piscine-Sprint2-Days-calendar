@@ -180,18 +180,20 @@ async function refreshCalendar() {
   await generateCalendar(currentYear, currentMonth);
 }
 
-async function handlePreviousBtn() {
-  if (currentMonth === 0) {
-    currentMonth = 11;
-    currentYear--;
-  } else {
-    currentMonth--;
-  }
+    async function handlePreviousBtn() {
+      closeModal();  
+      if (currentMonth === 0) {
+        currentMonth = 11;
+        currentYear--;
+      } else {
+        currentMonth--;
+      }
 
-  await refreshCalendar();
-}
+      await refreshCalendar();
+    }
 
 async function handleNextBtn() {
+  closeModal();  
   if (currentMonth === 11) {
     currentMonth = 0;
     currentYear++;
