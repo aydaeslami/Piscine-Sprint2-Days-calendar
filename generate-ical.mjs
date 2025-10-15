@@ -29,8 +29,8 @@ function getICalTimestamp() {
 }
 
 async function generateICalFile() {
-  const startYear = 2020;
-  const endYear = 2030;
+  const startYear = 1900;
+  const endYear = 2050;
   const timestamp = getICalTimestamp();
   
   let icalContent = [

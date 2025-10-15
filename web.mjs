@@ -36,8 +36,8 @@ function populateMonthsDropdown() {
 
 // Populate years dropdown
 function populateYearsDropdown() {
-  const startYear = currentYear - 30;
-  const endYear = currentYear + 30;
+  const startYear = currentYear - 125;
+  const endYear = currentYear + 25;
 
   yearsDropdown.innerHTML = ""; // Clear existing options
 
