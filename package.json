@@ -1,0 +1,21 @@
+{
+  "name": "days-cal",
+  "version": "1.0.0",
+  "description": "There are some commemorative days which occur annually, but not on a fixed date.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aydaeslami/Piscine-Sprint2-Days-calendar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/aydaeslami/Piscine-Sprint2-Days-calendar/issues"
+  },
+  "homepage": "https://github.com/aydaeslami/Piscine-Sprint2-Days-calendar#readme"
+}
