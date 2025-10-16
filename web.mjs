@@ -1,4 +1,6 @@
-import { getGreeting, getEventsForMonth, getMonths } from "./common.mjs";
+
+import { getDaysInMonth, getStartDay, getWeeksNeeded } from "./calendar-utils.mjs";
+import { getEventsForMonth, getMonths } from "./common.mjs";
 
 //Dom references
 let monthsDropdown;
@@ -56,6 +58,8 @@ async function showEventModal(event) {
   modalTitle.textContent = event.name;
   modalDescription.textContent = "Loading...";
   modal.style.display = "flex";
+
+  modalClose.style.display = "block"; // or "inline-block"
 
   // Fetch content from descriptionURL
   if (event.descriptionURL) {
@@ -123,13 +127,10 @@ function closeModal() {
 async function generateCalendar(year, month) {
   calendarBody.innerHTML = "";
 
-  const daysInMonth = new Date(year, month + 1, 0).getDate();
-  const firstDay = new Date(year, month, 1).getDay();
-  const startDay = (firstDay + 6) % 7;
-
-  // Calculate exact weeks needed
-  const totalCells = startDay + daysInMonth;
-  const weeksNeeded = Math.ceil(totalCells / 7);
+  const daysInMonth = getDaysInMonth(year, month);
+  const startDay = getStartDay(year, month);
+  const weeksNeeded = getWeeksNeeded(year, month);
+  
 
   const events = await getEventsForMonth(year, month);
   // console.log("Events for month:", events.descriptionURL);
