@@ -8,13 +8,9 @@ import { getTargetDay } from "./common.mjs";
 let passedTests = 0;
 let failedTests = 0;
 
-
-
 function assertEqual(actual, expected, message) {
   if (actual !== expected) {
-    throw new Error(
-      message || `Expected ${expected} but got ${actual}`
-    );
+    throw new Error(message || `Expected ${expected} but got ${actual}`);
   }
 }
 
@@ -37,9 +33,19 @@ test("Second Tuesday of October 2024 should be day 8", () => {
   assertEqual(result, 8, "Second Tuesday should be October 8th");
 });
 
-
 test("Greeting is correct", () => {
   assert.equal(getGreeting(), "Hello");
 });
 
 
+
+
+
+test("getTargetDay returns correct day for 2nd Tuesday of October 2024", () => {
+  // October 1, 2024 → Tuesday
+  const firstDay = new Date(2024, 9, 1).getDay(); // 2
+  const result = getTargetDay(firstDay, "Tuesday", 2, 2024, 9);
+
+  // Expected: second Tuesday = October 8, 2024
+  assert.strictEqual(result, 8);
+});
