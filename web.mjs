@@ -21,10 +21,11 @@ let currentYear = today.getFullYear(); // Current year (e.g., 2024)
 
 // Populate months dropdown
 function populateMonthsDropdown() {
-  const months = getMonths();
+  const months = getMonths();  // Get month names from common.mjs
 
   monthsDropdown.innerHTML = ""; // Clear existing options';
 
+  // Create and append month options
   months.forEach((month, index) => {
     const option = document.createElement("option");
     option.value = index; // Use index as value (0-11)
@@ -42,6 +43,7 @@ function populateYearsDropdown() {
 
   yearsDropdown.innerHTML = ""; // Clear existing options
 
+  // Create and append year options
   for (let year = startYear; year <= endYear; year++) {
     const option = document.createElement("option");
     option.value = year;
@@ -49,8 +51,7 @@ function populateYearsDropdown() {
     yearsDropdown.appendChild(option);
   }
 
-  //set default to current year
-  yearsDropdown.value = currentYear;
+  yearsDropdown.value = currentYear; //set default to current year
 }
 
 // Show modal with event details
@@ -211,11 +212,13 @@ async function handleNextBtn() {
 async function handleMonthChange(event) {
   currentMonth = Number(event.target.value);
   await refreshCalendar();
+  closeModal();
 }
 
 async function handleYearChange(event) {
   currentYear = Number(event.target.value);
   await refreshCalendar();
+  closeModal();
 }
 
 // Initialize application
