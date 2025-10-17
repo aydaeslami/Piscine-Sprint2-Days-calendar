@@ -12,7 +12,6 @@ let modal;
 let modalClose;
 let modalTitle;
 let modalDescription;
-let modalLink;
 
 //State variables
 const today = new Date();
@@ -21,10 +20,11 @@ let currentYear = today.getFullYear(); // Current year (e.g., 2024)
 
 // Populate months dropdown
 function populateMonthsDropdown() {
-  const months = getMonths();
+  const months = getMonths(); // get month names from common.mjs
 
   monthsDropdown.innerHTML = ""; // Clear existing options';
 
+  // Add month options to dropdown
   months.forEach((month, index) => {
     const option = document.createElement("option");
     option.value = index; // Use index as value (0-11)
@@ -37,11 +37,12 @@ function populateMonthsDropdown() {
 
 // Populate years dropdown
 function populateYearsDropdown() {
-  const startYear = currentYear - 125;
-  const endYear = currentYear + 25;
+  const startYear = currentYear - 125; // start from 125 years ago
+  const endYear = currentYear + 25; // up to 25 years in the future
 
   yearsDropdown.innerHTML = ""; // Clear existing options
 
+  // Add year options to dropdown
   for (let year = startYear; year <= endYear; year++) {
     const option = document.createElement("option");
     option.value = year;
@@ -53,28 +54,28 @@ function populateYearsDropdown() {
   yearsDropdown.value = currentYear;
 }
 
-// Show modal with event details
+// Function  displays a modal with the event details of the calendar event 
 async function showEventModal(event) {
-  modalTitle.textContent = event.name;
-  modalDescription.textContent = "Loading...";
-  modal.style.display = "flex";
+  modalTitle.textContent = event.name; // set modal title
+  modalDescription.textContent = "Loading...";  // Shows a loading placeholder while fetching content.
+  modal.style.display = "flex"; // Makes modal visible
 
-  modalClose.style.display = "block"; // or "inline-block"
+  modalClose.style.display = "block"; // or "inline-block" to show close button
 
   // Fetch content from descriptionURL
-  if (event.descriptionURL) {
+  if (event.descriptionURL) { // Fetch if the event has a descriptionURL
     try {
-      const response = await fetch(event.descriptionURL);
+      const response = await fetch(event.descriptionURL); 
       const html = await response.text();
 
-      // Parse HTML to extract title and text content
+      // Parses the HTML string into a DOM object so we can query it like a webpage.
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, "text/html");
 
       // Get page title
       const pageTitle = doc.querySelector("title")?.textContent || event.name;
 
-      // Get main text content (try common content selectors)
+      // Extract the element from common elements
       let content = "";
       const contentSelectors = [
         "article",
@@ -84,38 +85,40 @@ async function showEventModal(event) {
         "body",
       ];
 
+      // Search for content in typical elements
       for (const selector of contentSelectors) {
         const element = doc.querySelector(selector);
         if (element) {
           // Remove script and style tags
           element
-            .querySelectorAll("script, style, nav, header, footer")
+            .querySelectorAll("script, style, nav, header, footer") // remove unnecessary elements like scripts, styles, nav, header, footer
             .forEach((el) => el.remove());
-          content = element.textContent.trim();
+          content = element.textContent.trim();  // take the first block of meaningful text
           if (content.length > 100) break;
         }
       }
 
       // Display the fetched content
-      modalDescription.innerHTML = `
+      // shows up to 500 characters of content 
+      // provides a link to the full page 
+      modalDescription.innerHTML = ` 
         <p>${content.slice(0, 500)}${content.length > 500 ? "..." : ""}</p>
         <a href="${
           event.descriptionURL
         }" target="_blank" style="color: #4CAF50; text-decoration:</a>
       `;
     } catch (error) {
-      modalDescription.innerHTML = `
+      modalDescription.innerHTML = `  
         <p>Unable to load content.</p>
         <a href="${event.descriptionURL}" target="_blank" style="color: #4CAF50; text-decoration: underline;">View on website</a>
       `;
     }
-  } else if (event.description) {
+  } else if (event.description) { // if no URL, use event.description
     modalDescription.textContent = event.description;
-  } else {
-    modalDescription.textContent = "No description available.";
+  } else {                        // if neither is available, "No description available."
+    modalDescription.textContent = "No description available.";  
   }
 
-  modalLink.style.display = "none";
 }
 
 // Close modal
@@ -127,9 +130,9 @@ function closeModal() {
 async function generateCalendar(year, month) {
   calendarBody.innerHTML = "";
 
-  const daysInMonth = getDaysInMonth(year, month);
-  const startDay = getStartDay(year, month);
-  const weeksNeeded = getWeeksNeeded(year, month);
+  const daysInMonth = getDaysInMonth(year, month); // total days in the month
+  const startDay = getStartDay(year, month); // first day of the month (0-6)
+  const weeksNeeded = getWeeksNeeded(year, month); // total weeks needed for the month
   
 
   const events = await getEventsForMonth(year, month);
@@ -211,11 +214,13 @@ async function handleNextBtn() {
 async function handleMonthChange(event) {
   currentMonth = Number(event.target.value);
   await refreshCalendar();
+  closeModal(); // Close modal when month changes
 }
 
 async function handleYearChange(event) {
   currentYear = Number(event.target.value);
   await refreshCalendar();
+  closeModal(); // Close modal when year changes
 }
 
 // Initialize application
@@ -229,7 +234,6 @@ async function setup() {
   modalClose = document.getElementById("modal-close");
   modalTitle = document.getElementById("modal-title");
   modalDescription = document.getElementById("modal-description");
-  modalLink = document.getElementById("modal-link");
 
   prevMonthBtn.addEventListener("click", handlePreviousBtn);
   nextMonthBtn.addEventListener("click", handleNextBtn);
