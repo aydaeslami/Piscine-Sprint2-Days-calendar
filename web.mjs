@@ -1,5 +1,8 @@
-
-import { getDaysInMonth, getStartDay, getWeeksNeeded } from "./calendar-utils.mjs";
+import {
+  getDaysInMonth,
+  getStartDay,
+  getWeeksNeeded,
+} from "./calendar-utils.mjs";
 import { getEventsForMonth, getMonths } from "./common.mjs";
 
 //Dom references
@@ -54,18 +57,19 @@ function populateYearsDropdown() {
   yearsDropdown.value = currentYear;
 }
 
-// Function  displays a modal with the event details of the calendar event 
+// Function  displays a modal with the event details of the calendar event
 async function showEventModal(event) {
   modalTitle.textContent = event.name; // set modal title
-  modalDescription.textContent = "Loading...";  // Shows a loading placeholder while fetching content.
+  modalDescription.textContent = "Loading..."; // Shows a loading placeholder while fetching content.
   modal.style.display = "flex"; // Makes modal visible
 
   modalClose.style.display = "block"; // or "inline-block" to show close button
 
   // Fetch content from descriptionURL
-  if (event.descriptionURL) { // Fetch if the event has a descriptionURL
+  if (event.descriptionURL) {
+    // Fetch if the event has a descriptionURL
     try {
-      const response = await fetch(event.descriptionURL); 
+      const response = await fetch(event.descriptionURL);
       const html = await response.text();
 
       // Parses the HTML string into a DOM object so we can query it like a webpage.
@@ -93,14 +97,14 @@ async function showEventModal(event) {
           element
             .querySelectorAll("script, style, nav, header, footer") // remove unnecessary elements like scripts, styles, nav, header, footer
             .forEach((el) => el.remove());
-          content = element.textContent.trim();  // take the first block of meaningful text
+          content = element.textContent.trim(); // take the first block of meaningful text
           if (content.length > 100) break;
         }
       }
 
       // Display the fetched content
-      // shows up to 500 characters of content 
-      // provides a link to the full page 
+      // shows up to 500 characters of content
+      // provides a link to the full page
       modalDescription.innerHTML = ` 
         <p>${content.slice(0, 500)}${content.length > 500 ? "..." : ""}</p>
         <a href="${
@@ -113,12 +117,13 @@ async function showEventModal(event) {
         <a href="${event.descriptionURL}" target="_blank" style="color: #4CAF50; text-decoration: underline;">View on website</a>
       `;
     }
-  } else if (event.description) { // if no URL, use event.description
+  } else if (event.description) {
+    // if no URL, use event.description
     modalDescription.textContent = event.description;
-  } else {                        // if neither is available, "No description available."
-    modalDescription.textContent = "No description available.";  
+  } else {
+    // if neither is available, "No description available."
+    modalDescription.textContent = "No description available.";
   }
-
 }
 
 // Close modal
@@ -126,99 +131,164 @@ function closeModal() {
   modal.style.display = "none";
 }
 
-// Generate calendar grid
+/**
+ * Generate and display the calendar grid for a specific month and year.
+ * This function:
+ * 1. Clears the existing calendar
+ * 2. Calculates how many weeks/rows are needed
+ * 3. Creates table cells for each day
+ * 4. Adds event information to cells that have commemorative days
+ * 5. Makes event cells clickable to open a modal with details
+ */
 async function generateCalendar(year, month) {
+  // Clear any existing calendar content before rebuilding
   calendarBody.innerHTML = "";
+  // Calculate calendar dimensions using utility functions
+  const daysInMonth = getDaysInMonth(year, month); // Total days in this month (28-31)
+  const startDay = getStartDay(year, month); // Which column the 1st falls on (0=Mon, 6=Sun)
+  const weeksNeeded = getWeeksNeeded(year, month); // How many rows we need (4-6 weeks)
 
-  const daysInMonth = getDaysInMonth(year, month); // total days in the month
-  const startDay = getStartDay(year, month); // first day of the month (0-6)
-  const weeksNeeded = getWeeksNeeded(year, month); // total weeks needed for the month
-  
-
+  // Fetch all commemorative days for this month/year
   const events = await getEventsForMonth(year, month);
-  // console.log("Events for month:", events.descriptionURL);
 
+  // Track which date number we're currently placing (1, 2, 3, etc.)
   let date = 1;
 
+  // Outer loop: Create one row for each week
   for (let week = 0; week < weeksNeeded; week++) {
     const row = document.createElement("tr");
 
+    // Inner loop: Create 7 cells (one for each day of the week: Mon-Sun)
     for (let day = 0; day < 7; day++) {
       const cell = document.createElement("td");
 
+      // First week: Leave cells blank before the month starts
+      // Example: if month starts on Wednesday, leave Mon & Tue blank
+
       if (week === 0 && day < startDay) {
         cell.textContent = "";
-      } else if (date > daysInMonth) {
+      } // After the month ends: Leave remaining cells blank
+      // Example: if month has 30 days, cells after day 30 are blank
+      else if (date > daysInMonth) {
         cell.textContent = "";
-      } else {
+      } // Regular day: Add the date number and check for events
+      else {
         const currentDate = date;
+
+        // Check if this date has a commemorative day
         const event = events.find((e) => e.day === currentDate);
 
         if (event) {
+          // Cell HAS an event: Display date + event name
           cell.innerHTML = `${currentDate}<br><small class="event-name">${event.name}</small>`;
-          cell.style.cursor = "pointer";
-          cell.classList.add("has-event");
+          cell.style.cursor = "pointer"; // Change cursor to indicate it's clickable
+          cell.classList.add("has-event"); // Add CSS class for styling
 
           // Add click handler to show modal
+          // Cell has NO event: Just display the date number
           cell.addEventListener("click", () => showEventModal(event));
         } else {
           cell.textContent = currentDate;
         }
-
+        // Move to the next date number for the next iteration
         date++;
       }
+      // Add this cell to the current row
       row.appendChild(cell);
     }
+
+    // Add this completed row to the calendar table body
     calendarBody.appendChild(row);
   }
 }
 
+/**
+ * Refresh the entire calendar display.
+ * Called whenever the user changes month/year via buttons or dropdowns.
+ * Updates:
+ * - The header showing current month/year
+ * - The dropdown values
+ * - The calendar grid itself
+ */
+
 async function refreshCalendar() {
-  // Update header
+  // Update the page header to show current month and year
   const months = getMonths();
   const header = document.querySelector("h1 b");
   header.textContent = `${months[currentMonth]} ${currentYear}`;
 
-  // Update dropdowns
+  // Sync the dropdown menus to match current month/year
+  // (Important when navigation happens via Previous/Next buttons)
   monthsDropdown.value = currentMonth;
   yearsDropdown.value = currentYear;
 
-  // Generate calendar grid
+  // Regenerate the calendar grid with updated month/year
   await generateCalendar(currentYear, currentMonth);
 }
 
+/**
+ * Handle "Previous Month" button click.
+ * Moves backward one month, wrapping to December of previous year if needed.
+ */
 async function handlePreviousBtn() {
+  // Close any open modal before navigating (better UX)
   closeModal();
+
+  // Check if we're at January - if so, wrap to December of previous year
   if (currentMonth === 0) {
-    currentMonth = 11;
-    currentYear--;
+    currentMonth = 11; // December
+    currentYear--; // Previous year
   } else {
+    // Otherwise, just go back one month
     currentMonth--;
   }
-
+  // Refresh calendar to show the new month
   await refreshCalendar();
 }
+
+/**
+ * Handle "Next Month" button click.
+ * Moves forward one month, wrapping to January of next year if needed.
+ */
 
 async function handleNextBtn() {
+  // Close any open modal before navigating (better UX)
   closeModal();
+
+  // Check if we're at December - if so, wrap to January of next year
   if (currentMonth === 11) {
-    currentMonth = 0;
-    currentYear++;
+    currentMonth = 0; // January
+    currentYear++; // Next year
   } else {
+    // Otherwise, just go forward one month
     currentMonth++;
   }
-
+  // Refresh calendar to show the new month
   await refreshCalendar();
 }
+/**
+ * Handle month dropdown change.
+ * Allows user to jump directly to any month.
+ */
 
 async function handleMonthChange(event) {
+  // Get selected month from dropdown (comes as string, convert to number)
   currentMonth = Number(event.target.value);
+  // Refresh calendar to show the selected month
   await refreshCalendar();
   closeModal(); // Close modal when month changes
 }
 
+/**
+ * Handle year dropdown change.
+ * Allows user to jump directly to any year.
+ */
+
 async function handleYearChange(event) {
+  // Get selected year from dropdown (comes as string, convert to number)
   currentYear = Number(event.target.value);
+
+  // Refresh calendar to show the selected year
   await refreshCalendar();
   closeModal(); // Close modal when year changes
 }
