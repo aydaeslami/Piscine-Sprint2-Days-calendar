@@ -4,10 +4,6 @@ import test from "node:test";
 
 import { getTargetDay } from "./common.mjs";
 
-// Simple test framework
-let passedTests = 0;
-let failedTests = 0;
-
 // Helper function to run a test
 function assertEqual(actual, expected, message) {
   if (actual !== expected) {
