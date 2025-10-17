@@ -81,7 +81,7 @@ async function loadDaysData() {
 }
 
 export async function getEventsForMonth(year, monthIndex) {
-  const data = await loadDaysData();
+  const data = await loadDaysData(); // Load days.json data 
 
   const events = [];
 
@@ -105,8 +105,8 @@ export async function getEventsForMonth(year, monthIndex) {
       events.push({
         day: dayNumber,
         name: element.name,
-        description: element.description || "",
-        descriptionURL: element.descriptionURL,
+        description: element.description || "", // push description if exists
+        descriptionURL: element.descriptionURL, 
       });
     }
   });

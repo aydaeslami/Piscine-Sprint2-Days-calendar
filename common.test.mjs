@@ -8,6 +8,7 @@ import { getTargetDay } from "./common.mjs";
 let passedTests = 0;
 let failedTests = 0;
 
+// Helper function to run a test
 function assertEqual(actual, expected, message) {
   if (actual !== expected) {
     throw new Error(message || `Expected ${expected} but got ${actual}`);

@@ -6,22 +6,21 @@
  * @param {number} month - Month index (0 = January, 11 = December)
  * @returns {number}
  */
-export function getDaysInMonth(year, month) {
+
+// --- SHARED LOGIC CODE ---
+// creates a date for day 0 of the next month, which is the last day of the given month. geetdate() extracts the day number
+export function getDaysInMonth(year, month) { // 
     return new Date(year, month + 1, 0).getDate();
   }
   
-  /**
-   * Returns the weekday index of the first day of the month,
-   * adjusted so that Monday = 0 and Sunday = 6.
-   */
+  // Calculates which weekday the month starts on
+  // Adjusts it so that Monday = 0 and Sunday = 6 (European-style week)
   export function getStartDay(year, month) {
-    const firstDay = new Date(year, month, 1).getDay(); // JS: 0 = Sunday
-    return (firstDay + 6) % 7; // Adjust so Monday = 0
+    const firstDay = new Date(year, month, 1).getDay(); 
+    return (firstDay + 6) % 7; 
   }
   
-  /**
-   * Calculates how many weeks (rows) are needed for a month view.
-   */
+  // Determines how many rows (weeks) the calendar grid needs to display that month
   export function getWeeksNeeded(year, month) {
     const daysInMonth = getDaysInMonth(year, month);
     const startDay = getStartDay(year, month);
