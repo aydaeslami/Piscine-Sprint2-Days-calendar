@@ -5,730 +5,609 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Commemorative Days
 X-WR-TIMEZONE:UTC
-X-WR-CALDESC:Commemorative days calendar (2020-2030)
+X-WR-CALDESC:Commemorative days calendar (2020–2030)
 BEGIN:VEVENT
 UID:202049-InternationalBinturongDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20200509
 DTEND;VALUE=DATE:20200509
 SUMMARY:International Binturong Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
+DESCRIPTION:Binturongs are really cute\, and smell of popcorn.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:202085-InternationalVultureAwarenessDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20200905
 DTEND;VALUE=DATE:20200905
 SUMMARY:International Vulture Awareness Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
+DESCRIPTION:Vultures are a much maligned species. They provide vital services to the ecosystem\, and without them the world would be a much worse place.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2020819-InternationalRedPandaDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20200919
 DTEND;VALUE=DATE:20200919
 SUMMARY:International Red Panda Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
+DESCRIPTION:Red pandas are an endangered species. They happen to be really cute\, but that's not the only reason we should help them to thrive!\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2020913-AdaLovelaceDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20201013
 DTEND;VALUE=DATE:20201013
 SUMMARY:Ada Lovelace Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/ada.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/ada.txt
+DESCRIPTION:Ada Lovelace was a mathematician who made contributions to the field of computing in its very early days. On Ada Lovelace Day we celebrate and raise awareness of the contributions of women to STEM fields.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/ada.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2020930-WorldLemurDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20201030
 DTEND;VALUE=DATE:20201030
 SUMMARY:World Lemur Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-TRANSP:TRANSPARENT
-END:VEVENT
-
-BEGIN:VEVENT
-UID:202094-JususZohreAida@commemorative-days
-DTSTAMP:20251015T145815Z
-DTSTART;VALUE=DATE:20201004
-DTEND;VALUE=DATE:20201004
-SUMMARY:Jusus Zohre Aida
-URL:https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
+DESCRIPTION:Lemurs are excellent. Did you know that the most likely scientific theory as to how they got to Madagascar is that they rafted there from mainland Africa?\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:202148-InternationalBinturongDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20210508
 DTEND;VALUE=DATE:20210508
 SUMMARY:International Binturong Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
+DESCRIPTION:Binturongs are really cute\, and smell of popcorn.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:202184-InternationalVultureAwarenessDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20210904
 DTEND;VALUE=DATE:20210904
 SUMMARY:International Vulture Awareness Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
+DESCRIPTION:Vultures are a much maligned species. They provide vital services to the ecosystem\, and without them the world would be a much worse place.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2021818-InternationalRedPandaDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20210918
 DTEND;VALUE=DATE:20210918
 SUMMARY:International Red Panda Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
+DESCRIPTION:Red pandas are an endangered species. They happen to be really cute\, but that's not the only reason we should help them to thrive!\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2021912-AdaLovelaceDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20211012
 DTEND;VALUE=DATE:20211012
 SUMMARY:Ada Lovelace Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/ada.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/ada.txt
+DESCRIPTION:Ada Lovelace was a mathematician who made contributions to the field of computing in its very early days. On Ada Lovelace Day we celebrate and raise awareness of the contributions of women to STEM fields.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/ada.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2021929-WorldLemurDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20211029
 DTEND;VALUE=DATE:20211029
 SUMMARY:World Lemur Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-TRANSP:TRANSPARENT
-END:VEVENT
-
-BEGIN:VEVENT
-UID:202193-JususZohreAida@commemorative-days
-DTSTAMP:20251015T145815Z
-DTSTART;VALUE=DATE:20211003
-DTEND;VALUE=DATE:20211003
-SUMMARY:Jusus Zohre Aida
-URL:https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
+DESCRIPTION:Lemurs are excellent. Did you know that the most likely scientific theory as to how they got to Madagascar is that they rafted there from mainland Africa?\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2022414-InternationalBinturongDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20220514
 DTEND;VALUE=DATE:20220514
 SUMMARY:International Binturong Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
+DESCRIPTION:Binturongs are really cute\, and smell of popcorn.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:202283-InternationalVultureAwarenessDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20220903
 DTEND;VALUE=DATE:20220903
 SUMMARY:International Vulture Awareness Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
+DESCRIPTION:Vultures are a much maligned species. They provide vital services to the ecosystem\, and without them the world would be a much worse place.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2022817-InternationalRedPandaDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20220917
 DTEND;VALUE=DATE:20220917
 SUMMARY:International Red Panda Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
+DESCRIPTION:Red pandas are an endangered species. They happen to be really cute\, but that's not the only reason we should help them to thrive!\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2022911-AdaLovelaceDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20221011
 DTEND;VALUE=DATE:20221011
 SUMMARY:Ada Lovelace Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/ada.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/ada.txt
+DESCRIPTION:Ada Lovelace was a mathematician who made contributions to the field of computing in its very early days. On Ada Lovelace Day we celebrate and raise awareness of the contributions of women to STEM fields.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/ada.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2022928-WorldLemurDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20221028
 DTEND;VALUE=DATE:20221028
 SUMMARY:World Lemur Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-TRANSP:TRANSPARENT
-END:VEVENT
-
-BEGIN:VEVENT
-UID:202292-JususZohreAida@commemorative-days
-DTSTAMP:20251015T145815Z
-DTSTART;VALUE=DATE:20221002
-DTEND;VALUE=DATE:20221002
-SUMMARY:Jusus Zohre Aida
-URL:https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
+DESCRIPTION:Lemurs are excellent. Did you know that the most likely scientific theory as to how they got to Madagascar is that they rafted there from mainland Africa?\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2023413-InternationalBinturongDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20230513
 DTEND;VALUE=DATE:20230513
 SUMMARY:International Binturong Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
+DESCRIPTION:Binturongs are really cute\, and smell of popcorn.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:202382-InternationalVultureAwarenessDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20230902
 DTEND;VALUE=DATE:20230902
 SUMMARY:International Vulture Awareness Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
+DESCRIPTION:Vultures are a much maligned species. They provide vital services to the ecosystem\, and without them the world would be a much worse place.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2023816-InternationalRedPandaDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20230916
 DTEND;VALUE=DATE:20230916
 SUMMARY:International Red Panda Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
+DESCRIPTION:Red pandas are an endangered species. They happen to be really cute\, but that's not the only reason we should help them to thrive!\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2023910-AdaLovelaceDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20231010
 DTEND;VALUE=DATE:20231010
 SUMMARY:Ada Lovelace Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/ada.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/ada.txt
+DESCRIPTION:Ada Lovelace was a mathematician who made contributions to the field of computing in its very early days. On Ada Lovelace Day we celebrate and raise awareness of the contributions of women to STEM fields.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/ada.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2023927-WorldLemurDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20231027
 DTEND;VALUE=DATE:20231027
 SUMMARY:World Lemur Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-TRANSP:TRANSPARENT
-END:VEVENT
-
-BEGIN:VEVENT
-UID:202391-JususZohreAida@commemorative-days
-DTSTAMP:20251015T145815Z
-DTSTART;VALUE=DATE:20231001
-DTEND;VALUE=DATE:20231001
-SUMMARY:Jusus Zohre Aida
-URL:https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
+DESCRIPTION:Lemurs are excellent. Did you know that the most likely scientific theory as to how they got to Madagascar is that they rafted there from mainland Africa?\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2024411-InternationalBinturongDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20240511
 DTEND;VALUE=DATE:20240511
 SUMMARY:International Binturong Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
+DESCRIPTION:Binturongs are really cute\, and smell of popcorn.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:202487-InternationalVultureAwarenessDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20240907
 DTEND;VALUE=DATE:20240907
 SUMMARY:International Vulture Awareness Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
+DESCRIPTION:Vultures are a much maligned species. They provide vital services to the ecosystem\, and without them the world would be a much worse place.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2024821-InternationalRedPandaDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20240921
 DTEND;VALUE=DATE:20240921
 SUMMARY:International Red Panda Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
+DESCRIPTION:Red pandas are an endangered species. They happen to be really cute\, but that's not the only reason we should help them to thrive!\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:202498-AdaLovelaceDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20241008
 DTEND;VALUE=DATE:20241008
 SUMMARY:Ada Lovelace Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/ada.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/ada.txt
+DESCRIPTION:Ada Lovelace was a mathematician who made contributions to the field of computing in its very early days. On Ada Lovelace Day we celebrate and raise awareness of the contributions of women to STEM fields.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/ada.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2024925-WorldLemurDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20241025
 DTEND;VALUE=DATE:20241025
 SUMMARY:World Lemur Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-TRANSP:TRANSPARENT
-END:VEVENT
-
-BEGIN:VEVENT
-UID:202496-JususZohreAida@commemorative-days
-DTSTAMP:20251015T145815Z
-DTSTART;VALUE=DATE:20241006
-DTEND;VALUE=DATE:20241006
-SUMMARY:Jusus Zohre Aida
-URL:https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
+DESCRIPTION:Lemurs are excellent. Did you know that the most likely scientific theory as to how they got to Madagascar is that they rafted there from mainland Africa?\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2025410-InternationalBinturongDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20250510
 DTEND;VALUE=DATE:20250510
 SUMMARY:International Binturong Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
+DESCRIPTION:Binturongs are really cute\, and smell of popcorn.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:202586-InternationalVultureAwarenessDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20250906
 DTEND;VALUE=DATE:20250906
 SUMMARY:International Vulture Awareness Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
+DESCRIPTION:Vultures are a much maligned species. They provide vital services to the ecosystem\, and without them the world would be a much worse place.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2025820-InternationalRedPandaDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20250920
 DTEND;VALUE=DATE:20250920
 SUMMARY:International Red Panda Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
+DESCRIPTION:Red pandas are an endangered species. They happen to be really cute\, but that's not the only reason we should help them to thrive!\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2025914-AdaLovelaceDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20251014
 DTEND;VALUE=DATE:20251014
 SUMMARY:Ada Lovelace Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/ada.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/ada.txt
+DESCRIPTION:Ada Lovelace was a mathematician who made contributions to the field of computing in its very early days. On Ada Lovelace Day we celebrate and raise awareness of the contributions of women to STEM fields.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/ada.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2025931-WorldLemurDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20251031
 DTEND;VALUE=DATE:20251031
 SUMMARY:World Lemur Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-TRANSP:TRANSPARENT
-END:VEVENT
-
-BEGIN:VEVENT
-UID:202595-JususZohreAida@commemorative-days
-DTSTAMP:20251015T145815Z
-DTSTART;VALUE=DATE:20251005
-DTEND;VALUE=DATE:20251005
-SUMMARY:Jusus Zohre Aida
-URL:https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
+DESCRIPTION:Lemurs are excellent. Did you know that the most likely scientific theory as to how they got to Madagascar is that they rafted there from mainland Africa?\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:202649-InternationalBinturongDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20260509
 DTEND;VALUE=DATE:20260509
 SUMMARY:International Binturong Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
+DESCRIPTION:Binturongs are really cute\, and smell of popcorn.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:202685-InternationalVultureAwarenessDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20260905
 DTEND;VALUE=DATE:20260905
 SUMMARY:International Vulture Awareness Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
+DESCRIPTION:Vultures are a much maligned species. They provide vital services to the ecosystem\, and without them the world would be a much worse place.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2026819-InternationalRedPandaDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20260919
 DTEND;VALUE=DATE:20260919
 SUMMARY:International Red Panda Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
+DESCRIPTION:Red pandas are an endangered species. They happen to be really cute\, but that's not the only reason we should help them to thrive!\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2026913-AdaLovelaceDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20261013
 DTEND;VALUE=DATE:20261013
 SUMMARY:Ada Lovelace Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/ada.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/ada.txt
+DESCRIPTION:Ada Lovelace was a mathematician who made contributions to the field of computing in its very early days. On Ada Lovelace Day we celebrate and raise awareness of the contributions of women to STEM fields.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/ada.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2026930-WorldLemurDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20261030
 DTEND;VALUE=DATE:20261030
 SUMMARY:World Lemur Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-TRANSP:TRANSPARENT
-END:VEVENT
-
-BEGIN:VEVENT
-UID:202694-JususZohreAida@commemorative-days
-DTSTAMP:20251015T145815Z
-DTSTART;VALUE=DATE:20261004
-DTEND;VALUE=DATE:20261004
-SUMMARY:Jusus Zohre Aida
-URL:https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
+DESCRIPTION:Lemurs are excellent. Did you know that the most likely scientific theory as to how they got to Madagascar is that they rafted there from mainland Africa?\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:202748-InternationalBinturongDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20270508
 DTEND;VALUE=DATE:20270508
 SUMMARY:International Binturong Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
+DESCRIPTION:Binturongs are really cute\, and smell of popcorn.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:202784-InternationalVultureAwarenessDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20270904
 DTEND;VALUE=DATE:20270904
 SUMMARY:International Vulture Awareness Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
+DESCRIPTION:Vultures are a much maligned species. They provide vital services to the ecosystem\, and without them the world would be a much worse place.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2027818-InternationalRedPandaDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20270918
 DTEND;VALUE=DATE:20270918
 SUMMARY:International Red Panda Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
+DESCRIPTION:Red pandas are an endangered species. They happen to be really cute\, but that's not the only reason we should help them to thrive!\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2027912-AdaLovelaceDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20271012
 DTEND;VALUE=DATE:20271012
 SUMMARY:Ada Lovelace Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/ada.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/ada.txt
+DESCRIPTION:Ada Lovelace was a mathematician who made contributions to the field of computing in its very early days. On Ada Lovelace Day we celebrate and raise awareness of the contributions of women to STEM fields.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/ada.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2027929-WorldLemurDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20271029
 DTEND;VALUE=DATE:20271029
 SUMMARY:World Lemur Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-TRANSP:TRANSPARENT
-END:VEVENT
-
-BEGIN:VEVENT
-UID:202793-JususZohreAida@commemorative-days
-DTSTAMP:20251015T145815Z
-DTSTART;VALUE=DATE:20271003
-DTEND;VALUE=DATE:20271003
-SUMMARY:Jusus Zohre Aida
-URL:https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
+DESCRIPTION:Lemurs are excellent. Did you know that the most likely scientific theory as to how they got to Madagascar is that they rafted there from mainland Africa?\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2028413-InternationalBinturongDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20280513
 DTEND;VALUE=DATE:20280513
 SUMMARY:International Binturong Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
+DESCRIPTION:Binturongs are really cute\, and smell of popcorn.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:202882-InternationalVultureAwarenessDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20280902
 DTEND;VALUE=DATE:20280902
 SUMMARY:International Vulture Awareness Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
+DESCRIPTION:Vultures are a much maligned species. They provide vital services to the ecosystem\, and without them the world would be a much worse place.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2028816-InternationalRedPandaDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20280916
 DTEND;VALUE=DATE:20280916
 SUMMARY:International Red Panda Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
+DESCRIPTION:Red pandas are an endangered species. They happen to be really cute\, but that's not the only reason we should help them to thrive!\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2028910-AdaLovelaceDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20281010
 DTEND;VALUE=DATE:20281010
 SUMMARY:Ada Lovelace Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/ada.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/ada.txt
+DESCRIPTION:Ada Lovelace was a mathematician who made contributions to the field of computing in its very early days. On Ada Lovelace Day we celebrate and raise awareness of the contributions of women to STEM fields.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/ada.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2028927-WorldLemurDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20281027
 DTEND;VALUE=DATE:20281027
 SUMMARY:World Lemur Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-TRANSP:TRANSPARENT
-END:VEVENT
-
-BEGIN:VEVENT
-UID:202891-JususZohreAida@commemorative-days
-DTSTAMP:20251015T145815Z
-DTSTART;VALUE=DATE:20281001
-DTEND;VALUE=DATE:20281001
-SUMMARY:Jusus Zohre Aida
-URL:https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
+DESCRIPTION:Lemurs are excellent. Did you know that the most likely scientific theory as to how they got to Madagascar is that they rafted there from mainland Africa?\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2029412-InternationalBinturongDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20290512
 DTEND;VALUE=DATE:20290512
 SUMMARY:International Binturong Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
+DESCRIPTION:Binturongs are really cute\, and smell of popcorn.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:202981-InternationalVultureAwarenessDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20290901
 DTEND;VALUE=DATE:20290901
 SUMMARY:International Vulture Awareness Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
+DESCRIPTION:Vultures are a much maligned species. They provide vital services to the ecosystem\, and without them the world would be a much worse place.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2029815-InternationalRedPandaDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20290915
 DTEND;VALUE=DATE:20290915
 SUMMARY:International Red Panda Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
+DESCRIPTION:Red pandas are an endangered species. They happen to be really cute\, but that's not the only reason we should help them to thrive!\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:202999-AdaLovelaceDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20291009
 DTEND;VALUE=DATE:20291009
 SUMMARY:Ada Lovelace Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/ada.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/ada.txt
+DESCRIPTION:Ada Lovelace was a mathematician who made contributions to the field of computing in its very early days. On Ada Lovelace Day we celebrate and raise awareness of the contributions of women to STEM fields.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/ada.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2029926-WorldLemurDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20291026
 DTEND;VALUE=DATE:20291026
 SUMMARY:World Lemur Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-TRANSP:TRANSPARENT
-END:VEVENT
-
-BEGIN:VEVENT
-UID:202997-JususZohreAida@commemorative-days
-DTSTAMP:20251015T145815Z
-DTSTART;VALUE=DATE:20291007
-DTEND;VALUE=DATE:20291007
-SUMMARY:Jusus Zohre Aida
-URL:https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
+DESCRIPTION:Lemurs are excellent. Did you know that the most likely scientific theory as to how they got to Madagascar is that they rafted there from mainland Africa?\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2030411-InternationalBinturongDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20300511
 DTEND;VALUE=DATE:20300511
 SUMMARY:International Binturong Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
+DESCRIPTION:Binturongs are really cute\, and smell of popcorn.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/binturongs.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:203087-InternationalVultureAwarenessDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20300907
 DTEND;VALUE=DATE:20300907
 SUMMARY:International Vulture Awareness Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
+DESCRIPTION:Vultures are a much maligned species. They provide vital services to the ecosystem\, and without them the world would be a much worse place.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/vultures.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2030821-InternationalRedPandaDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20300921
 DTEND;VALUE=DATE:20300921
 SUMMARY:International Red Panda Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
+DESCRIPTION:Red pandas are an endangered species. They happen to be really cute\, but that's not the only reason we should help them to thrive!\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/red-pandas.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:203098-AdaLovelaceDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20301008
 DTEND;VALUE=DATE:20301008
 SUMMARY:Ada Lovelace Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/ada.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/ada.txt
+DESCRIPTION:Ada Lovelace was a mathematician who made contributions to the field of computing in its very early days. On Ada Lovelace Day we celebrate and raise awareness of the contributions of women to STEM fields.\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/ada.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 
 BEGIN:VEVENT
 UID:2030925-WorldLemurDay@commemorative-days
-DTSTAMP:20251015T145815Z
+DTSTAMP:20251017T074610Z
 DTSTART;VALUE=DATE:20301025
 DTEND;VALUE=DATE:20301025
 SUMMARY:World Lemur Day
 URL:https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-TRANSP:TRANSPARENT
-END:VEVENT
-
-BEGIN:VEVENT
-UID:203096-JususZohreAida@commemorative-days
-DTSTAMP:20251015T145815Z
-DTSTART;VALUE=DATE:20301006
-DTEND;VALUE=DATE:20301006
-SUMMARY:Jusus Zohre Aida
-URL:https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
-DESCRIPTION:More information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
+DESCRIPTION:Lemurs are excellent. Did you know that the most likely scientific theory as to how they got to Madagascar is that they rafted there from mainland Africa?\n\nMore information: https://codeyourfuture.github.io/The-Piscine/days/lemurs.txt
 TRANSP:TRANSPARENT
 END:VEVENT
 END:VCALENDAR
